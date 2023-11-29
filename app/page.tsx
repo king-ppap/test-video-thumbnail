@@ -22,7 +22,7 @@ export default function Home() {
 
     const renderVideosThumbnailList = () => {
         return videoList.data.map((value) => (
-            <VideoThumbnail url={value.thumbnail} />
+            <VideoThumbnail url={value.thumbnail} key={value.id} />
         ));
     };
 
