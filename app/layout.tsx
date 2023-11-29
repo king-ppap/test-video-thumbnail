@@ -4,6 +4,8 @@ import './globals.css';
 
 import StyledComponentsRegistry from '@/lib/AntdRegistry';
 import Link from 'next/link';
+import { ConfigProvider } from 'antd';
+import theme from '@/theme/themeConfig';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,9 +29,11 @@ export default function RootLayout({
                         </h1>
                     </Link>
                 </div>
-                <StyledComponentsRegistry>
-                    <div className="py-12 px-24">{children}</div>
-                </StyledComponentsRegistry>
+                <ConfigProvider theme={theme}>
+                    <StyledComponentsRegistry>
+                        <div className="py-12 px-24">{children}</div>
+                    </StyledComponentsRegistry>
+                </ConfigProvider>
             </body>
         </html>
     );
