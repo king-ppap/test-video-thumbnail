@@ -22,7 +22,7 @@ export default function Home() {
 
     const renderVideosThumbnailList = () => {
         return videoList.data.map((value) => (
-            <VideoThumbnail url={value.thumbnail} key={value.id} />
+            <VideoThumbnail key={value.id} url={value.thumbnail} name={value.name} />
         ));
     };
 
@@ -31,7 +31,9 @@ export default function Home() {
             {videoList.isLoading ? (
                 <AppLoadingFullScreen />
             ) : (
-                renderVideosThumbnailList()
+                <div className="grid grid-flow-col grid-cols-3 gap-4">
+                    {renderVideosThumbnailList()}
+                </div>
             )}
         </main>
     );
