@@ -7,7 +7,7 @@ interface VideoThumbnailProps {
 
 const VideoThumbnail: React.FC<VideoThumbnailProps> = ({ url, name }) => {
     return (
-        <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+        <div className="hover:cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
             <Image
                 preview={false}
                 className="w-[200px] h-[100px] rounded-xl"
