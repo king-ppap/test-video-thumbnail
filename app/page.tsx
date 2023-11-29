@@ -24,7 +24,7 @@ export default function Home() {
     const renderVideosThumbnailList = () => {
         return videoList.data.map((value) => (
             <Link
-                href={`http://localhost:3000/watch?v=${value.id}`}
+                href={`/watch?v=${value.id}`}
                 key={value.id}
             >
                 {' '}
