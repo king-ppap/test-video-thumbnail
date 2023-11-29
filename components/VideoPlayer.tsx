@@ -1,8 +1,8 @@
 'use client';
 import { apiGetVideoDetail } from '@/api/videos';
-import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
 import React, { useEffect, useState } from 'react';
+import ReactPlayer from 'react-player';
 
 interface VideoContentProps {
     videoId: string;
@@ -25,16 +25,7 @@ const VideoContent: React.FC<VideoContentProps> = ({ videoId }) => {
     return (
         <div className="text-center">
             <h2 className="text-2xl font-bold mb-4">{videoDetails?.name}</h2>
-            <iframe
-                width="560"
-                height="315"
-                src={videoDetails?.url}
-                title={videoDetails?.name}
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                className="mb-4"
-            ></iframe>
+            <ReactPlayer url={videoDetails?.url} controls={true} />
             <p>{videoDetails?.description}</p>
         </div>
     );
