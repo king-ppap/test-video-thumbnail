@@ -6,4 +6,5 @@ interface VideoDetails {
     name: string
     description: string
     url: string
+    thumbnail: string
 }
