@@ -4,6 +4,7 @@ import { useVideos } from '@/api/videos';
 import VideoThumbnail from '@/components/VideoThumbnail';
 import AppLoadingFullScreen from '@/components/app/AppLoadingFullScreen';
 import { Alert } from 'antd';
+import Link from 'next/link';
 
 export default function Home() {
     const videoList = useVideos();
@@ -22,16 +23,25 @@ export default function Home() {
 
     const renderVideosThumbnailList = () => {
         return videoList.data.map((value) => (
-            <VideoThumbnail url={value.thumbnail} key={value.id} />
+            <Link href={`http://localhost:3000/watch?v=${value.id}`}>
+                {' '}
+                <VideoThumbnail
+                    key={value.id}
+                    url={value.thumbnail}
+                    name={value.name}
+                />
+            </Link>
         ));
     };
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <main className="flex min-h-screen flex-col items-center justify-between">
             {videoList.isLoading ? (
                 <AppLoadingFullScreen />
             ) : (
-                renderVideosThumbnailList()
+                <div className="grid grid-flow-col sm:grid-cols-1 md:grid-cols-3 gap-4">
+                    {renderVideosThumbnailList()}
+                </div>
             )}
         </main>
     );
