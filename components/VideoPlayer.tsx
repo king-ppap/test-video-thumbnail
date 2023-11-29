@@ -30,9 +30,9 @@ const VideoContent: React.FC<VideoContentProps> = ({ videoId }) => {
     return isLoadingVideoDetails ? (
         <AppLoadingFullScreen />
     ) : (
-        <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">{videoDetails?.name}</h2>
-            <ReactPlayer url={videoDetails?.url} controls={true} />
+        <div className="">
+            <ReactPlayer url={videoDetails?.url} controls={true} width="100%" volume={0.3} />
+            <h2 className="text-2xl font-bold my-4">{videoDetails?.name}</h2>
             <p>{videoDetails?.description}</p>
         </div>
     );
