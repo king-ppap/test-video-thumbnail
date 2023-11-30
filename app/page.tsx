@@ -38,7 +38,7 @@ export default function Home() {
             {videoList.isLoading ? (
                 <AppLoadingFullScreen />
             ) : (
-                <div className="grid grid-flow-row sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div className="w-full grid grid-flow-row sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {renderVideosThumbnailList()}
                 </div>
             )}

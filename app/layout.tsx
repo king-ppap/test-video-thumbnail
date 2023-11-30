@@ -31,7 +31,7 @@ export default function RootLayout({
                 </div>
                 <ConfigProvider theme={theme}>
                     <StyledComponentsRegistry>
-                        <div className="py-12 px-24">{children}</div>
+                        <div className="py-2 px-4 md:py-12 md:px-24 lg:py-12 lg:px-24">{children}</div>
                     </StyledComponentsRegistry>
                 </ConfigProvider>
             </body>
