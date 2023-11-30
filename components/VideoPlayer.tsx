@@ -1,6 +1,5 @@
 'use client';
-import { apiGetVideoDetail } from '@/api/videos';
-import { NextResponse } from 'next/server';
+import { apiGetVideoDetail } from '@/api/video';
 import React, { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import AppLoadingFullScreen from './app/AppLoadingFullScreen';
