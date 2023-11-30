@@ -1,6 +1,6 @@
 'use client';
 
-import { useVideos } from '@/api/videos';
+import { useVideos } from '@/api/video';
 import VideoThumbnail from '@/components/VideoThumbnail';
 import AppLoadingFullScreen from '@/components/app/AppLoadingFullScreen';
 import { Alert } from 'antd';
